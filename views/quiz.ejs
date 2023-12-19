@@ -1,0 +1,41 @@
+<%- include('partials/header') -%>
+<h1>Quiz Questions</h1>
+<ul>
+    <% questions.forEach(question => { %>
+        <li>
+            <%= question.text %>
+            <ul>
+                <% question.options.forEach(option => { %>
+                    <li><%= option %> <%= option === question.correctAnswer ? "(Correct)" : "" %></li>
+                <% }) %>
+            </ul>
+        </li>
+    <% }) %>
+</ul>
+
+<% questions.forEach(question => { %>
+    <form action="/quiz/check-answer" method="post">
+        <p><%= question.text %></p>
+        <% question.options.forEach(option => { %>
+            <input type="checkbox" name="answers" value="<%= option %>"> <%= option %><br>
+        <% }) %>
+        <input type="hidden" name="questionId" value="<%= question.id %>">
+        <button type="submit">Check Answer</button>
+    </form>
+<% }) %>
+
+
+
+<form action="/quiz/add" method="post">
+    <input type="text" name="questionText" placeholder="Enter question">
+    <input type="text" name="option1" placeholder="Option 1">
+    <input type="text" name="option2" placeholder="Option 2">
+    <input type="text" name="option3" placeholder="Option 3">
+    <input type="checkbox" name="correctAnswers" value="option1"> Option 1
+    <input type="checkbox" name="correctAnswers" value="option2"> Option 2
+    <input type="checkbox" name="correctAnswers" value="option3"> Option 3
+    <button type="submit">Add Question</button>
+</form>
+
+
+<%- include('partials/footer') -%>
