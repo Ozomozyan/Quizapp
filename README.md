@@ -3,12 +3,11 @@ title:  |
     ![](public/argonaultes-logo.png){width=1in}\textsuperscript{\textcopyright}\break
     QCM Backend ExpressJS
 author:
-- Gaël Roustan (Argonaultes)
-logo: 'public/argonaultes-logo.png'
+- Remade Quizapp from the start by Ozomozyan
 date: "2023-2024"
 keywords: [backend,framework,javascript,express,node]
 abstract: |
-  Ce document présente les étapes détaillées pour une première utilisation du framework ExpressJS
+  Ce document présente les étapes détaillées pour une première utilisation du framework ExpressJS par Mr.Gaël Roustan et refait par moi.
 
 header-includes: |
     \usepackage{fancyhdr}
